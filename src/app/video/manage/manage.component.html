@@ -34,15 +34,18 @@
           <a [routerLink]="['/', 'clip', clip.docID]" class="font-bold mb-2">
             {{ clip.title }}
           </a>
-          <a (click)="copyToClipboard($event, clip.docID)"
-           class="bg-gray-400 text-white px-2 py-1 ml-2 text-sm rounded">
-            Copy Link
-          </a>
+          
   
         </div>
 
         <!-- Actions -->
         <div class="flex text-center text-2xl bg-gray-800 p-2 mt-auto">
+
+          <a (click)="copyToClipboard($event, clip.docID)"
+           class="flex-1 p-2 border-right border-r-2 border-gray-700 transition hover:text-indigo-400 cursor-pointer">
+           <span class="material-icons text-base">content_copy</span>
+          </a>
+
           <a (click)="openModal($event, clip)" 
           href="#" class="flex-1 p-2 border-right border-r-2 border-gray-700 transition hover:text-indigo-400">
             <span class="material-icons text-base">build</span>
