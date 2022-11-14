@@ -21,8 +21,11 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "isolatedModules": true,
+    "types": ["jest", "node"]
   },
+  "exclude": ["node_modules", "cypress", "./cypress.config.ts"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
