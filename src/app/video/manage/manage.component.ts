@@ -35,7 +35,7 @@ export class ManageComponent implements OnInit {
 
       docs.forEach(doc => {
         this.clips.push({
-          docID: doc.id,
+          docID: doc['id'],
           ...doc.data()
         })
       })

@@ -16,13 +16,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2017",
+    "target": "es2020",
     "module": "es2020",
     "lib": [
       "es2020",
       "dom"
     ],
-    "isolatedModules": true,
     "types": ["jest", "node"]
   },
   "exclude": ["node_modules", "cypress", "./cypress.config.ts"],
