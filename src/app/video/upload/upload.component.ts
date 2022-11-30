@@ -134,7 +134,7 @@ export class UploadComponent implements OnDestroy {
         const clip = {
           uid: this.user?.uid as string,
           displayName: this.user?.displayName as string,
-          title: this.title.value,
+          title: this.title.value as string,
           fileName: `${clipFileName}.mp4`,
           url: clipURL,
           screenshotURL,
