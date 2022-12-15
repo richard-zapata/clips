@@ -3,18 +3,21 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/auth'
+// import firebase from 'firebase/compat/app'
+// import 'firebase/compat/auth'
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { initializeApp } from 'firebase/app';
 
 if (environment.production) {
   enableProdMode();
 }
 
-firebase.initializeApp(environment.firebase)
+const firebaseApp = initializeApp(environment.firebase);
 
 let appInit = false
 
-firebase.auth().onAuthStateChanged(() => {
+const auth = getAuth(firebaseApp);
+onAuthStateChanged(auth, user => {
   if(!appInit) {
     platformBrowserDynamic().bootstrapModule(AppModule)
       .catch(err => console.error(err));
@@ -22,3 +25,12 @@ firebase.auth().onAuthStateChanged(() => {
 
   appInit = true
 })
+
+// firebase.auth().onAuthStateChanged(() => {
+//   if(!appInit) {
+//     platformBrowserDynamic().bootstrapModule(AppModule)
+//       .catch(err => console.error(err));
+//   }
+
+//   appInit = true
+// })

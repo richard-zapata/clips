@@ -141,10 +141,8 @@ export class UploadComponent implements OnDestroy {
           screenshotFileName: `${clipFileName}.png`,
           timestamp: firebase.firestore.FieldValue.serverTimestamp()
         }
-
+        
         const clipDocRef = await this.clipsService.createClip(clip)
-
-        console.log(clip)
 
         this.alertColor = 'green'
         this.alertMsg = 'Success! Your clip is now ready to share with the world.'
